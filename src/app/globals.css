@@ -1,0 +1,159 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: #ffffff;
+  --foreground: #333333;
+
+  --card: #ffffff;
+  --card-foreground: #333333;
+
+  --popover: #ffffff;
+  --popover-foreground: #333333;
+
+  --primary: #008080; /* Teal */
+  --primary-foreground: #ffffff;
+
+  --secondary: #ffb300; /* Amber (accent usage when needed) */
+  --secondary-foreground: #333333;
+
+  --muted: #b0b0b0;
+  --muted-foreground: #333333;
+
+  --accent: #ffb300;
+  --accent-foreground: #333333;
+
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+
+  --border: #e0e0e0;
+  --input: #f7f7f7;
+  --ring: #008080;
+
+  /* Charts (stay minimal, aligned to 5-color palette) */
+  --chart-1: #008080; /* primary */
+  --chart-2: #ffb300; /* accent */
+  --chart-3: #b0b0b0; /* gray */
+  --chart-4: #ffffff; /* white */
+  --chart-5: #333333; /* near-black */
+
+  --radius: 0.5rem;
+
+  /* Sidebar (if used) */
+  --sidebar: #ffffff;
+  --sidebar-foreground: #333333;
+  --sidebar-primary: #008080;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #ffb300;
+  --sidebar-accent-foreground: #333333;
+  --sidebar-border: #e0e0e0;
+  --sidebar-ring: #008080;
+}
+
+.dark {
+  --background: #333333; /* near-black background */
+  --foreground: #ffffff; /* high-contrast text */
+
+  --card: #333333;
+  --card-foreground: #ffffff;
+
+  --popover: #333333;
+  --popover-foreground: #ffffff;
+
+  --primary: #008080; /* teal remains primary */
+  --primary-foreground: #ffffff;
+
+  --secondary: #ffb300; /* amber accent */
+  --secondary-foreground: #333333;
+
+  --muted: #4a4a4a; /* darker muted */
+  --muted-foreground: #b0b0b0;
+
+  --accent: #ffb300;
+  --accent-foreground: #333333;
+
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+
+  --border: #3f3f3f;
+  --input: #3a3a3a;
+  --ring: #008080;
+
+  --chart-1: #008080;
+  --chart-2: #ffb300;
+  --chart-3: #b0b0b0;
+  --chart-4: #ffffff;
+  --chart-5: #333333;
+
+  --sidebar: #333333;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #008080;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #ffb300;
+  --sidebar-accent-foreground: #333333;
+  --sidebar-border: #3f3f3f;
+  --sidebar-ring: #008080;
+}
+
+@theme inline {
+  --font-sans: var(--font-open-sans);
+  --font-mono: var(--font-geist-mono); /* keep mono for code if needed */
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family:
+      var(--font-work-sans), ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 700;
+  }
+}
